@@ -7,7 +7,7 @@
     <!-- Fonte temática de quadrinhos de alta qualidade -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
     <!-- Biblioteca oficial para desenhar o QR Code real na tela -->
-    <script src="src/main/resources/static/https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', 'Segoe UI', sans-serif; }
         body { background-color: #f8f9fa; color: #333; overflow-x: hidden; }
@@ -103,7 +103,7 @@
             position: absolute;
             object-fit: contain;
             filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.4));
-            z-index: 2;
+            z-index: 1;
             transition: transform 0.3s ease;
         }
         .banner-float-char:hover { transform: scale(1.12) !important; z-index: 10; }
@@ -113,15 +113,15 @@
             100% { transform: translateY(-10px); }
         }
 
-        /* Personagens ajustados */
-        .char-pernalonga { top: 3%; left: 2%; max-width: 230px; max-height: 270px; animation: floatSuave 3.5s ease-in-out infinite alternate; }
-        .char-shera      { top: 5%; left: 19%; max-width: 160px; max-height: 190px; animation: floatSuave 3.6s ease-in-out infinite alternate 0.3s; }
-        .char-heman      { top: 4%; right: 19%; max-width: 160px; max-height: 190px; animation: floatSuave 3.3s ease-in-out infinite alternate 0.5s; }
-        .char-minnie     { top: 4%; right: 3%; max-width: 175px; max-height: 205px; animation: floatSuave 3.2s ease-in-out infinite alternate 0.2s; }
-        .char-mickey     { bottom: 4%; left: 3%; max-width: 180px; max-height: 210px; animation: floatSuave 3.8s ease-in-out infinite alternate 0.4s; }
-        .char-patolino   { bottom: 4%; left: 20%; max-width: 160px; max-height: 190px; animation: floatSuave 3.4s ease-in-out infinite alternate 0.8s; }
-        .char-pantera    { bottom: 8%; right: 26%; max-width: 205px; max-height: 235px; animation: floatSuave 4.0s ease-in-out infinite alternate 0.6s; } 
-        .char-snoopy-group { bottom: 2%; right: 4%; max-width: 280px; max-height: 230px; animation: floatSuave 3.7s ease-in-out infinite alternate 0.7s; z-index: 4; }
+        /* Personagens compactados e posicionados nos cantos para não invadir o texto central */
+        .char-pernalonga { top: 15px; left: 20px; max-width: 110px; height: auto; animation: floatSuave 3.5s ease-in-out infinite alternate; }
+        .char-shera       { top: 15px; left: 160px; max-width: 90px; height: auto; animation: floatSuave 3.6s ease-in-out infinite alternate 0.3s; }
+        .char-heman       { top: 15px; right: 160px; max-width: 90px; height: auto; animation: floatSuave 3.3s ease-in-out infinite alternate 0.5s; }
+        .char-minnie      { top: 15px; right: 20px; max-width: 100px; height: auto; animation: floatSuave 3.2s ease-in-out infinite alternate 0.2s; }
+        .char-mickey      { bottom: 15px; left: 20px; max-width: 110px; height: auto; animation: floatSuave 3.8s ease-in-out infinite alternate 0.4s; }
+        .char-patolino    { bottom: 15px; left: 150px; max-width: 95px; height: auto; animation: floatSuave 3.4s ease-in-out infinite alternate 0.8s; }
+        .char-pantera     { bottom: 15px; right: 180px; max-width: 105px; height: auto; animation: floatSuave 4.0s ease-in-out infinite alternate 0.6s; } 
+        .char-snoopy-group { bottom: 15px; right: 20px; max-width: 150px; height: auto; animation: floatSuave 3.7s ease-in-out infinite alternate 0.7s; }
 
         .banner-content {
             position: relative;
@@ -235,29 +235,9 @@
         .timeline-step::before { content: '📍'; position: absolute; left: -28px; top: 0; background: #fff; }
         .btn-voltar { background: #111; color: white; border: none; padding: 12px 24px; border-radius: 6px; margin-top: 20px; cursor: pointer; font-weight: bold; width: 100%; }
 
-        @media (max-width: 990px) { .banner-float-char { display: none; }
-
-        
-       /* Ajuste profissional para os personagens do Banner Principal */
-.banner-float-char {
-    max-width: 90px; /* Define o tamanho compacto */
-    height: auto;
-    z-index: 1;     /* Garante que fiquem levemente atras do navbar */
-    position: relative; /* Necessario para o z-index funcionar */
-}
-
-/* Garante que o Header (com o botão Carrinho) fique sempre no topo */
-header {
-    position: relative;
-    z-index: 100; /* Número alto para ficar por cima de tudo */
-}
-
-/* Garante que os botões centrais fiquem por cima dos personagens */
-.hero .btn-group, header + div .btn-group {
-    position: relative;
-    z-index: 10; /* Número intermediário, por cima dos personagens */
-}
-    }
+        @media (max-width: 990px) { 
+            .banner-float-char { display: none; } 
+        }
     </style>
 </head>
 <body>
@@ -679,7 +659,6 @@ header {
                 return;
             }
 
-            // Para Cartão de Crédito e Boleto, prossegue direto para a tela de rastreio/sucesso
             processarEnvioBackend(formaPagamento);
         }
 
