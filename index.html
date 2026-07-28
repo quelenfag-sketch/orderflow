@@ -235,8 +235,28 @@
         .timeline-step::before { content: '📍'; position: absolute; left: -28px; top: 0; background: #fff; }
         .btn-voltar { background: #111; color: white; border: none; padding: 12px 24px; border-radius: 6px; margin-top: 20px; cursor: pointer; font-weight: bold; width: 100%; }
 
-        @media (max-width: 990px) { .banner-float-char { display: none; } 
-        .banner-float-char { max-width: 90px; height: auto; }
+        @media (max-width: 990px) { .banner-float-char { display: none; }
+
+        
+       /* Ajuste profissional para os personagens do Banner Principal */
+.banner-float-char {
+    max-width: 90px; /* Define o tamanho compacto */
+    height: auto;
+    z-index: 1;     /* Garante que fiquem levemente atras do navbar */
+    position: relative; /* Necessario para o z-index funcionar */
+}
+
+/* Garante que o Header (com o botão Carrinho) fique sempre no topo */
+header {
+    position: relative;
+    z-index: 100; /* Número alto para ficar por cima de tudo */
+}
+
+/* Garante que os botões centrais fiquem por cima dos personagens */
+.hero .btn-group, header + div .btn-group {
+    position: relative;
+    z-index: 10; /* Número intermediário, por cima dos personagens */
+}
     }
     </style>
 </head>
