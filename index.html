@@ -85,7 +85,7 @@
         }
         .cart-btn:hover { transform: scale(1.08); box-shadow: 0 8px 22px rgba(46, 204, 113, 0.7); background: linear-gradient(135deg, #00c9a7, #84d92d); }
 
-        /* Banner Principal com Altura Confortável */
+        /* Banner Principal Ajustado */
         .banner { 
             background: linear-gradient(135deg, rgba(121, 40, 202, 0.95), rgba(255, 0, 128, 0.90)), 
                         radial-gradient(circle, #ffffff 12%, transparent 13%);
@@ -99,7 +99,7 @@
             min-height: 560px;
         }
 
-        /* Padronização uniforme e espaçada para os personagens do banner */
+        /* Padronização uniforme para os personagens do banner */
         .banner-float-char {
             position: absolute;
             width: 90px;
@@ -116,17 +116,16 @@
             100% { transform: translateY(-8px); }
         }
 
-        /* Lado Esquerdo Distribuído Perfeitamente de Cima a Baixo */
+        /* Posicionamento refinado: Mickey e Pantera mais próximos do centro (perto dos botões) */
         .char-pernalonga { top: 8%; left: 4%; animation: floatSuave 3.5s ease-in-out infinite alternate; }
         .char-shera      { top: 35%  ; left: 4%; animation: floatSuave 3.6s ease-in-out infinite alternate 0.3s; }
         .char-patolino   { top: 62%  ; left: 4%; animation: floatSuave 3.4s ease-in-out infinite alternate 0.8s; }
-        .char-mickey     { bottom: 8%; left: 4%; animation: floatSuave 3.8s ease-in-out infinite alternate 0.4s; }
+        .char-mickey     { bottom: 8%; left: 16%; animation: floatSuave 3.8s ease-in-out infinite alternate 0.4s; } /* Mickey próximo ao botão central */
 
-        /* Lado Direito Distribuído Perfeitamente de Cima a Baixo */
         .char-heman      { top: 8%; right: 4%; animation: floatSuave 3.3s ease-in-out infinite alternate 0.5s; }
         .char-minnie     { top: 35%  ; right: 4%; animation: floatSuave 3.2s ease-in-out infinite alternate 0.2s; }
         .char-snoopy-group { top: 60%; right: 4%; animation: floatSuave 3.7s ease-in-out infinite alternate 0.7s; width: 110px; height: 110px; }
-        .char-pantera    { bottom: 8%; right: 4%; animation: floatSuave 4.0s ease-in-out infinite alternate 0.6s; } 
+        .char-pantera    { bottom: 8%; right: 16%; animation: floatSuave 4.0s ease-in-out infinite alternate 0.6s; } /* Pantera próximo ao botão central */
 
         .banner-content {
             position: relative;
@@ -169,7 +168,7 @@
         .banner-tags { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
         .tag-pill { background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(6px); padding: 9px 18px; border-radius: 16px; font-size: 14px; font-weight: 800; border: 2px solid rgba(255, 255, 255, 0.7); text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
 
-        /* Catálogo de Camisetas Maiores e Mais Distribuídas */
+        /* Catálogo de Camisetas */
         .container { max-width: 1400px; margin: 60px auto; padding: 0 30px; }
         .section-title { font-size: 34px; margin-bottom: 45px; color: #2c3e50; text-align: center; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
         .grid-produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 40px; }
