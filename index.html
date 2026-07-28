@@ -99,29 +99,34 @@
             min-height: 560px;
         }
 
+        /* Padronização uniforme e perfeita para todos os personagens do banner */
         .banner-float-char {
             position: absolute;
+            width: 125px;
+            height: 125px;
             object-fit: contain;
             filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.4));
-            z-index: 1;
+            z-index: 2;
             transition: transform 0.3s ease;
         }
-        .banner-float-char:hover { transform: scale(1.12) !important; z-index: 10; }
+        .banner-float-char:hover { transform: scale(1.12); z-index: 10; }
 
         @keyframes floatSuave {
             0% { transform: translateY(0px); }
             100% { transform: translateY(-10px); }
         }
 
-        /* Personagens compactados e posicionados nos cantos para não invadir o texto central */
-        .char-pernalonga { top: 15px; left: 20px; max-width: 110px; height: auto; animation: floatSuave 3.5s ease-in-out infinite alternate; }
-        .char-shera       { top: 15px; left: 160px; max-width: 90px; height: auto; animation: floatSuave 3.6s ease-in-out infinite alternate 0.3s; }
-        .char-heman       { top: 15px; right: 160px; max-width: 90px; height: auto; animation: floatSuave 3.3s ease-in-out infinite alternate 0.5s; }
-        .char-minnie      { top: 15px; right: 20px; max-width: 100px; height: auto; animation: floatSuave 3.2s ease-in-out infinite alternate 0.2s; }
-        .char-mickey      { bottom: 15px; left: 20px; max-width: 110px; height: auto; animation: floatSuave 3.8s ease-in-out infinite alternate 0.4s; }
-        .char-patolino    { bottom: 15px; left: 150px; max-width: 95px; height: auto; animation: floatSuave 3.4s ease-in-out infinite alternate 0.8s; }
-        .char-pantera     { bottom: 15px; right: 180px; max-width: 105px; height: auto; animation: floatSuave 4.0s ease-in-out infinite alternate 0.6s; } 
-        .char-snoopy-group { bottom: 15px; right: 20px; max-width: 150px; height: auto; animation: floatSuave 3.7s ease-in-out infinite alternate 0.7s; }
+        /* Lado Esquerdo Distribuído Simetricamente */
+        .char-pernalonga { top: 25px; left: 35px; animation: floatSuave 3.5s ease-in-out infinite alternate; }
+        .char-shera      { top: 180px; left: 35px; animation: floatSuave 3.6s ease-in-out infinite alternate 0.3s; }
+        .char-mickey     { bottom: 25px; left: 35px; animation: floatSuave 3.8s ease-in-out infinite alternate 0.4s; }
+        .char-patolino   { bottom: 180px; left: 35px; animation: floatSuave 3.4s ease-in-out infinite alternate 0.8s; }
+
+        /* Lado Direito Distribuído Simetricamente */
+        .char-heman      { top: 25px; right: 35px; animation: floatSuave 3.3s ease-in-out infinite alternate 0.5s; }
+        .char-minnie     { top: 180px; right: 35px; animation: floatSuave 3.2s ease-in-out infinite alternate 0.2s; }
+        .char-pantera    { bottom: 25px; right: 35px; animation: floatSuave 4.0s ease-in-out infinite alternate 0.6s; } 
+        .char-snoopy-group { bottom: 180px; right: 35px; animation: floatSuave 3.7s ease-in-out infinite alternate 0.7s; }
 
         .banner-content {
             position: relative;
@@ -260,14 +265,14 @@
     <!-- Conteúdo Principal da Loja -->
     <div id="loja-content">
         <div class="banner">
-            <img src="src/main/resources/static/desenho pernalonga 1.png" class="banner-float-char char-pernalonga" alt="Pernalonga">
-            <img src="src/main/resources/static/she-ra1.png" class="banner-float-char char-shera" alt="She-Ra">
-            <img src="src/main/resources/static/he-man1.png" class="banner-float-char char-heman" alt="He-Man">
-            <img src="src/main/resources/static/Minnie_Mouse.png" class="banner-float-char char-minnie" alt="Minnie Mouse">
-            <img src="src/main/resources/static/michey.png" class="banner-float-char char-mickey" alt="Mickey Mouse">
-            <img src="src/main/resources/static/patolino.png" class="banner-float-char char-patolino" alt="Patolino">
-            <img src="src/main/resources/static/pantera cor de rosa1.png" class="banner-float-char char-pantera" alt="Pantera Cor de Rosa">
-            <img src="src/main/resources/static/Adobe Express - file.png" class="banner-float-char char-snoopy-group" alt="Turma do Snoopy">
+            <img src="desenho pernalonga 1.png" class="banner-float-char char-pernalonga" alt="Pernalonga">
+            <img src="she-ra1.png" class="banner-float-char char-shera" alt="She-Ra">
+            <img src="he-man1.png" class="banner-float-char char-heman" alt="He-Man">
+            <img src="Minnie_Mouse.png" class="banner-float-char char-minnie" alt="Minnie Mouse">
+            <img src="michey.png" class="banner-float-char char-mickey" alt="Mickey Mouse">
+            <img src="patolino.png" class="banner-float-char char-patolino" alt="Patolino">
+            <img src="pantera cor de rosa1.png" class="banner-float-char char-pantera" alt="Pantera Cor de Rosa">
+            <img src="Adobe Express - file.png" class="banner-float-char char-snoopy-group" alt="Turma do Snoopy">
 
             <div class="banner-content">
                 <div class="banner-badge">🔥 Coleção Nostalgia Clássica</div>
@@ -287,7 +292,7 @@
             <div class="grid-produtos">
                 <!-- Produto 1 -->
                 <div class="card">
-                    <div class="card-img-container"><img src="src/main/resources/static/snoopy 1.jpg" alt="Snoopy"></div>
+                    <div class="card-img-container"><img src="snoopy 1.jpg" alt="Snoopy"></div>
                     <div class="card-info">
                         <div class="card-title">Camiseta Snoopy Studios Backprint 🐶❤️</div>
                         <div class="card-price">R$ 89,90</div>
@@ -300,7 +305,7 @@
                 </div>
                 <!-- Produto 2 -->
                 <div class="card">
-                    <div class="card-img-container"><img src="src/main/resources/static/scoobydoo 1.jpg" alt="Scooby-Doo"></div>
+                    <div class="card-img-container"><img src="scoobydoo 1.jpg" alt="Scooby-Doo"></div>
                     <div class="card-info">
                         <div class="card-title">Camiseta Scooby-Doo & Butterfly 🐕🦋</div>
                         <div class="card-price">R$ 89,90</div>
@@ -313,7 +318,7 @@
                 </div>
                 <!-- Produto 3 -->
                 <div class="card">
-                    <div class="card-img-container"><img src="src/main/resources/static/garfield.jpg" alt="Garfield"></div>
+                    <div class="card-img-container"><img src="garfield.jpg" alt="Garfield"></div>
                     <div class="card-info">
                         <div class="card-title">Camiseta Garfield Pop Art 🐱🍕</div>
                         <div class="card-price">R$ 89,90</div>
@@ -326,7 +331,7 @@
                 </div>
                 <!-- Produto 4 -->
                 <div class="card">
-                    <div class="card-img-container"><img src="src/main/resources/static/cavalo de fogo.webp" alt="Cavalo de Fogo"></div>
+                    <div class="card-img-container"><img src="cavalo de fogo.webp" alt="Cavalo de Fogo"></div>
                     <div class="card-info">
                         <div class="card-title">Camiseta Cavalo de Fogo Wildfire 🦄🔥</div>
                         <div class="card-price">R$ 89,90</div>
@@ -339,7 +344,7 @@
                 </div>
                 <!-- Produto 5 -->
                 <div class="card">
-                    <div class="card-img-container"><img src="src/main/resources/static/she-ra.jpg" alt="She-Ra"></div>
+                    <div class="card-img-container"><img src="she-ra.jpg" alt="She-Ra"></div>
                     <div class="card-info">
                         <div class="card-title">Camiseta She-Ra Star Vintage ⚔️✨</div>
                         <div class="card-price">R$ 89,90</div>
@@ -352,7 +357,7 @@
                 </div>
                 <!-- Produto 6 -->
                 <div class="card">
-                    <div class="card-img-container"><img src="src/main/resources/static/pantera cor de rosa.jpg" alt="Pantera Cor de Rosa"></div>
+                    <div class="card-img-container"><img src="pantera cor de rosa.jpg" alt="Pantera Cor de Rosa"></div>
                     <div class="card-info">
                         <div class="card-title">Camiseta Pink Panther Streetwear 🐆💖</div>
                         <div class="card-price">R$ 94,90</div>
@@ -365,7 +370,7 @@
                 </div>
                 <!-- Produto 7 -->
                 <div class="card">
-                    <div class="card-img-container"><img src="src/main/resources/static/he-man.jpg" alt="He-Man"></div>
+                    <div class="card-img-container"><img src="he-man.jpg" alt="He-Man"></div>
                     <div class="card-info">
                         <div class="card-title">Camiseta He-Man Masters Vintage 🗡️</div>
                         <div class="card-price">R$ 89,90</div>
@@ -378,7 +383,7 @@
                 </div>
                 <!-- Produto 8 -->
                 <div class="card">
-                    <div class="card-img-container"><img src="src/main/resources/static/caverna do dragão.webp" alt="Caverna do Dragão"></div>
+                    <div class="card-img-container"><img src="caverna do dragão.webp" alt="Caverna do Dragão"></div>
                     <div class="card-info">
                         <div class="card-title">Camiseta Caverna do Dragão Vingador 🐲</div>
                         <div class="card-price">R$ 94,90</div>
