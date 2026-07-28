@@ -1,28 +1,32 @@
 package com.quelen.orderflow.controller;
 
 import com.quelen.orderflow.model.Pedido;
-import com.quelen.orderflow.service.PedidoService;
+import com.quelen.orderflow.repository.PedidoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/pedidos")
+@CrossOrigin(origins = "*") // Permite que a tela bonita converse com a API
 public class PedidoController {
 
-    private final PedidoService service;
-
-    public PedidoController(PedidoService service) {
-        this.service = service;
-    }
+    @Autowired
+    private PedidoRepository repository;
 
     @GetMapping
     public List<Pedido> listar() {
-        return service.listarTodos();
+        return repository.findAll();
     }
 
     @PostMapping
     public Pedido criar(@RequestBody Pedido pedido) {
-        return service.salvar(pedido);
+        return repository.save(pedido);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id) {
+        repository.deleteById(id);
     }
 }
